@@ -1,10 +1,8 @@
 #!/bin/bash
 set -e
 
-# Default build type is Debug
 BUILD_TYPE=${1:-Debug}
 
-# Normalize capitalization (e.g., debug → Debug)
 BUILD_TYPE=$(echo "$BUILD_TYPE" | awk '{print toupper(substr($0,1,1)) tolower(substr($0,2))}')
 
 echo "Building in $BUILD_TYPE mode..."
